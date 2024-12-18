@@ -1,0 +1,33 @@
+<div>
+  <h1>Welcome to the Dashboard</h1>
+  <div *ngIf="user_role === 'superadmin'">
+    <button (click)="getRegisterPage()">Create User</button>
+  </div>
+
+  <div *ngIf="user_role === 'admin'">
+    <button (click)="getRegisterPage()">Create User</button>
+  </div>
+
+</div>
+<div>
+    <h1>Farm Dashboard</h1>
+    <div *ngIf="user_role === 'superadmin'">
+      <button (click)="createFarmer()">Create Farmer</button>
+      <button (click)="listFarmers()">List Farmers</button>
+      <button (click)="getFarmersSowing()">Get All Farmers Sowing</button>
+      <button (click)="getDueTodayTomorrow()">Get Dues for Today/Tomorrow</button>
+    </div>
+
+    <div *ngIf="user_role === 'admin'">
+        <button (click)="createFarmer()">Create Farmer</button>
+        <button (click)="listFarmers()">List Farmers</button>
+        <button (click)="getFarmersSowing()">Get All Farmers Sowing</button>
+        <button (click)="getDueTodayTomorrow()">Get Dues for Today/Tomorrow</button>
+    </div>
+
+    <div *ngIf="user_role === 'user'">
+        <button (click)="listFarmers()">List Farmers</button>
+      <button (click)="getFarmersSowing()">Get All Farmers Sowing</button>
+        <button (click)="getDueTodayTomorrow()">Get Dues for Today/Tomorrow</button>
+    </div>
+</div>
