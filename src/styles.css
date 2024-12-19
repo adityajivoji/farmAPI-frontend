@@ -1,4 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
+a {
+  cursor: pointer;
+}
 
 .form-signin {
   max-width: 330px;
@@ -20,3 +23,5 @@
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

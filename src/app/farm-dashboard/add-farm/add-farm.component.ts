@@ -2,11 +2,12 @@ import { HttpClient, HttpClientModule, HttpHeaders } from '@angular/common/http'
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
+import { SecondaryNavComponent } from '../../secondary-nav/secondary-nav.component';
 
 @Component({
   selector: 'app-add-farm',
   standalone: true,
-  imports: [ReactiveFormsModule, FormsModule, RouterModule, HttpClientModule],
+  imports: [ReactiveFormsModule, FormsModule, RouterModule, HttpClientModule, SecondaryNavComponent],
   templateUrl: './add-farm.component.html',
   styleUrls: ['./add-farm.component.css']
 })
@@ -55,7 +56,7 @@ export class AddFarmComponent implements OnInit {
 
     // Make the HTTP POST request
     this.http
-      .post(`https://13.232.10.107:443/add/farm/${this.farmerId}`, this.form.getRawValue(), { headers })
+      .post(`http://13.232.10.107:80/add/farm/${this.farmerId}`, this.form.getRawValue(), { headers })
       .subscribe(
         res => {
           console.log('Response:', res);

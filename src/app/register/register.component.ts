@@ -37,7 +37,7 @@ export class RegisterComponent implements OnInit {
       Authorization: `Bearer ${token}`
     };
 
-    this.http.post('https://13.232.10.107:443/register/user', this.form.getRawValue(), {headers})
+    this.http.post('http://13.232.10.107:80/register/user', this.form.getRawValue(), {headers})
       .subscribe((res: any) => {
         console.log(res);
       });

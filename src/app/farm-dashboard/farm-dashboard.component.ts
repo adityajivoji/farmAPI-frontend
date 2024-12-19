@@ -48,7 +48,7 @@ export class FarmDashboardComponent {
       this.router.navigate(['/add-farmer'])
     }
     getFarmersSowing():void {
-      this.router.navigate(['/farmers-sowing'])
+      this.router.navigate(['/farmers-sowing']) 
     }
     getDueTodayTomorrow():void {
       this.router.navigate(['/due-today-tomorrow'])

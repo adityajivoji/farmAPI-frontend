@@ -1,33 +1,107 @@
-<div>
-  <h1>Welcome to the Dashboard</h1>
-  <div *ngIf="user_role === 'superadmin'">
-    <button (click)="getRegisterPage()">Create User</button>
+<div class="container mt-4">
+  <h1 class="text-center text-primary">Welcome to the Dashboard</h1>
+
+  <!-- Super Admin and Admin User Role Section -->
+  <div *ngIf="user_role === 'superadmin' || user_role === 'admin'">
+    <div class="row g-3">
+      <!-- Create User Card as a Link -->
+      
+    </div>
+
+    <!-- Farm Dashboard Section -->
+    <div class="mt-4">
+      <div class="row g-3">
+        <div class="col-md-3">
+          <a mat-card class="card-link" (click)="getRegisterPage()">
+            <div class="card shadow-sm hover-shadow">
+              <div class="card-body">
+                <h5 class="card-title text-center">Create User</h5>
+              </div>
+            </div>
+          </a>
+        </div>
+        <!-- Create Farmer Card -->
+        <div class="col-md-3">
+          <a mat-card class="card-link" (click)="createFarmer()">
+            <div class="card shadow-sm hover-shadow">
+              <div class="card-body">
+                <h5 class="card-title text-center">Create Farmer</h5>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- List Farmers Card -->
+        <div class="col-md-3">
+          <a mat-card class="card-link" (click)="listFarmers()">
+            <div class="card shadow-sm hover-shadow">
+              <div class="card-body">
+                <h5 class="card-title text-center">List Farmers</h5>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Farmers Sowing Card -->
+        <div class="col-md-3">
+          <a mat-card class="card-link" (click)="getFarmersSowing()">
+            <div class="card shadow-sm hover-shadow">
+              <div class="card-body">
+                <h5 class="card-title text-center">Farmers Sowing</h5>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Dues Card -->
+        <div class="col-md-3">
+          <a mat-card class="card-link" (click)="getDueTodayTomorrow()">
+            <div class="card shadow-sm hover-shadow">
+              <div class="card-body">
+                <h5 class="card-title text-center">Dues Today/Tomorrow</h5>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <div *ngIf="user_role === 'admin'">
-    <button (click)="getRegisterPage()">Create User</button>
+  <!-- User Role Section for User -->
+  <div *ngIf="user_role === 'user'">
+    <div class="row g-3">
+      <!-- List Farmers Card -->
+      <div class="col-md-4">
+        <a mat-card class="card-link" (click)="listFarmers()">
+          <div class="card shadow-sm hover-shadow">
+            <div class="card-body">
+              <h5 class="card-title text-center">List Farmers</h5>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Farmers Sowing Card -->
+      <div class="col-md-4">
+        <a mat-card class="card-link" (click)="getFarmersSowing()">
+          <div class="card shadow-sm hover-shadow">
+            <div class="card-body">
+              <h5 class="card-title text-center">Farmers Sowing</h5>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Dues Card -->
+      <div class="col-md-4">
+        <a mat-card class="card-link" (click)="getDueTodayTomorrow()">
+          <div class="card shadow-sm hover-shadow">
+            <div class="card-body">
+              <h5 class="card-title text-center">Dues Today/Tomorrow</h5>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
   </div>
-
-</div>
-<div>
-    <h1>Farm Dashboard</h1>
-    <div *ngIf="user_role === 'superadmin'">
-      <button (click)="createFarmer()">Create Farmer</button>
-      <button (click)="listFarmers()">List Farmers</button>
-      <button (click)="getFarmersSowing()">Get All Farmers Sowing</button>
-      <button (click)="getDueTodayTomorrow()">Get Dues for Today/Tomorrow</button>
-    </div>
-
-    <div *ngIf="user_role === 'admin'">
-        <button (click)="createFarmer()">Create Farmer</button>
-        <button (click)="listFarmers()">List Farmers</button>
-        <button (click)="getFarmersSowing()">Get All Farmers Sowing</button>
-        <button (click)="getDueTodayTomorrow()">Get Dues for Today/Tomorrow</button>
-    </div>
-
-    <div *ngIf="user_role === 'user'">
-        <button (click)="listFarmers()">List Farmers</button>
-      <button (click)="getFarmersSowing()">Get All Farmers Sowing</button>
-        <button (click)="getDueTodayTomorrow()">Get Dues for Today/Tomorrow</button>
-    </div>
 </div>

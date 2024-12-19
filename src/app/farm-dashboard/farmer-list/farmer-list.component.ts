@@ -3,9 +3,10 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { Router } from '@angular/router';
+import { SecondaryNavComponent } from '../../secondary-nav/secondary-nav.component';
 @Component({
   selector: 'app-farmer-list',
-  imports: [RouterModule, CommonModule, HttpClientModule],
+  imports: [RouterModule, CommonModule, HttpClientModule, SecondaryNavComponent],
   templateUrl: './farmer-list.component.html',
   styleUrl: './farmer-list.component.css'
 })
@@ -27,7 +28,7 @@ export class FarmerListComponent implements OnInit{
     const headers = {
       Authorization: `Bearer ${token}`
     };
-    this.http.get<any[]>("https://13.232.10.107:443/list/farmers", { headers })
+    this.http.get<any[]>("http://13.232.10.107:80/list/farmers", { headers })
       .subscribe({
         next: (data) => {
           this.farmers = data.map(farmer => ({ 

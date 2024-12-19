@@ -2,10 +2,11 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { RouterModule, Router, ActivatedRoute } from '@angular/router';
+import { SecondaryNavComponent } from '../../secondary-nav/secondary-nav.component';
 
 @Component({
   selector: 'app-farm',
-  imports: [RouterModule, CommonModule, HttpClientModule],
+  imports: [SecondaryNavComponent, RouterModule, CommonModule, HttpClientModule],
   templateUrl: './farm.component.html',
   styleUrl: './farm.component.css'
 })
@@ -43,7 +44,7 @@ export class FarmComponent implements OnInit {
     };
     this.isLoading = true;
     this.selectedFarmerId = farmerId;
-    this.http.get<any[]>(`https://13.232.10.107:443/list/farms/${farmerId}`, { headers })
+    this.http.get<any[]>(`http://13.232.10.107:80/list/farms/${farmerId}`, { headers })
       .subscribe({
         next: (data) => {
           this.farms = data.map(farm => ({

@@ -39,7 +39,7 @@ export class NavComponent {
     
     Emitters.authEmitter.emit(false);
     // Call the logout API
-    this.http.post('https://13.232.10.107:443/logout',{}, {headers}).subscribe(
+    this.http.post('http://13.232.10.107:80/logout',{}, {headers}).subscribe(
       () => {
         // Remove the token from localStorage
         

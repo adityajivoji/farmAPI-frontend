@@ -2,10 +2,11 @@ import { HttpClient, HttpClientModule} from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
+import { SecondaryNavComponent } from '../../secondary-nav/secondary-nav.component';
 
 @Component({
   selector: 'app-add-schedule',
-  imports: [ReactiveFormsModule, FormsModule, RouterModule, HttpClientModule],
+  imports: [SecondaryNavComponent, ReactiveFormsModule, FormsModule, RouterModule, HttpClientModule],
   templateUrl: './add-schedule.component.html',
   styleUrl: './add-schedule.component.css'
 })
@@ -41,7 +42,7 @@ export class AddScheduleComponent {
         Authorization: `Bearer ${token}`
       };
   
-      this.http.post(`https://13.232.10.107:443/add/schedule/${this.farmId}`, this.form.getRawValue(), {headers})
+      this.http.post(`http://13.232.10.107:80/add/schedule/${this.farmId}`, this.form.getRawValue(), {headers})
         .subscribe((res: any) => {
           console.log(res);
         });

@@ -3,9 +3,10 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { OnInit } from '@angular/core';
 import { RouterModule, Router, ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { SecondaryNavComponent } from '../../secondary-nav/secondary-nav.component';
 @Component({
   selector: 'app-farmer',
-  imports: [RouterModule, CommonModule, HttpClientModule],
+  imports: [SecondaryNavComponent, RouterModule, CommonModule, HttpClientModule],
   templateUrl: './farmer.component.html',
   styleUrl: './farmer.component.css'
 })
@@ -42,7 +43,7 @@ export class FarmerComponent implements OnInit {
       Authorization: `Bearer ${token}`
     };
     this.isLoading = true;
-    this.http.get<any>(`https://13.232.10.107:443/get/farmer/${farmerId}`, { headers }).subscribe({
+    this.http.get<any>(`http://13.232.10.107:80/get/farmer/${farmerId}`, { headers }).subscribe({
       next: (data) => {
         interface Farm {
           id: number;

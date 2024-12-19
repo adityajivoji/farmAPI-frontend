@@ -3,11 +3,12 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { SecondaryNavComponent } from '../../../secondary-nav/secondary-nav.component';
 
 @Component({
   selector: 'app-get-farmers-sowing',
   standalone: true,
-  imports: [CommonModule, RouterModule, HttpClientModule],
+  imports: [CommonModule, RouterModule, HttpClientModule, SecondaryNavComponent],
   templateUrl: './get-farmers-sowing.component.html',
   styleUrls: ['./get-farmers-sowing.component.css']
 })
@@ -29,7 +30,7 @@ export class GetFarmersSowingComponent implements OnInit {
     const headers = {
       Authorization: `Bearer ${token}`
     };
-    this.http.get<any[]>("https://13.232.10.107:443/get_view/all_farmer_growing_crop", { headers })
+    this.http.get<any[]>("http://13.232.10.107:80/get_view/all_farmer_growing_crop", { headers })
       .subscribe({
         next: (data) => {
           this.farmers = data.map(farmer => ({ id: farmer[0], name: farmer[1] }));
