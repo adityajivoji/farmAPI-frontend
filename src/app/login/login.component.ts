@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
 
     console.log("button clicked");
 
-  this.http.post('http://127.0.0.1:80/login', this.form.getRawValue())
+  this.http.post('https://13.232.10.107:443/login', this.form.getRawValue())
     .subscribe((res: any) => {
 
       // Extract the token from the response

@@ -43,7 +43,7 @@ export class ScheduleComponent implements OnInit{
       Authorization: `Bearer ${token}`
     };
     this.isLoading = true;
-    this.http.get<any>(`http://127.0.0.1:80/get/schedules/${schedule_id}`, { headers }).subscribe({
+    this.http.get<any>(`https://13.232.10.107:443/get/schedules/${schedule_id}`, { headers }).subscribe({
       next: (data) => {
         this.schedule = data;
         this.isLoading = false;

@@ -43,7 +43,7 @@ export class FarmComponent implements OnInit {
     };
     this.isLoading = true;
     this.selectedFarmerId = farmerId;
-    this.http.get<any[]>(`http://127.0.0.1:80/list/farms/${farmerId}`, { headers })
+    this.http.get<any[]>(`https://13.232.10.107:443/list/farms/${farmerId}`, { headers })
       .subscribe({
         next: (data) => {
           this.farms = data.map(farm => ({

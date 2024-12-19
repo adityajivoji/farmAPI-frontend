@@ -29,7 +29,7 @@ export class GetTodayTomorrowComponent implements OnInit {
     const headers = {
       Authorization: `Bearer ${token}`
     };
-    this.http.get<any[]>("http://127.0.0.1:80/get_view/todaytomorrow", { headers })
+    this.http.get<any[]>("https://13.232.10.107:443/get_view/todaytomorrow", { headers })
       .subscribe({
         next: (data) => {
           this.schedules = data.map(item => ({ 

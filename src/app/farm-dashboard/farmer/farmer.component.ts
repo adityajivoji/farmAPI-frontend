@@ -42,7 +42,7 @@ export class FarmerComponent implements OnInit {
       Authorization: `Bearer ${token}`
     };
     this.isLoading = true;
-    this.http.get<any>(`http://127.0.0.1:80/get/farmer/${farmerId}`, { headers }).subscribe({
+    this.http.get<any>(`https://13.232.10.107:443/get/farmer/${farmerId}`, { headers }).subscribe({
       next: (data) => {
         interface Farm {
           id: number;

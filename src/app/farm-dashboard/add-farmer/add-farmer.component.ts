@@ -34,7 +34,7 @@ export class AddFarmerComponent implements OnInit {
       Authorization: `Bearer ${token}`
     };
 
-    this.http.post('http://127.0.0.1:80/add/farmer', this.form.getRawValue(), { headers })
+    this.http.post('https://13.232.10.107:443/add/farmer', this.form.getRawValue(), { headers })
       .subscribe((res: any) => {
         console.log(res);
       });

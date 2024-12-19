@@ -27,7 +27,7 @@ export class FarmerListComponent implements OnInit{
     const headers = {
       Authorization: `Bearer ${token}`
     };
-    this.http.get<any[]>("http://127.0.0.1:80/list/farmers", { headers })
+    this.http.get<any[]>("https://13.232.10.107:443/list/farmers", { headers })
       .subscribe({
         next: (data) => {
           this.farmers = data.map(farmer => ({ 

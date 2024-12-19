@@ -41,7 +41,7 @@ export class AddScheduleComponent {
         Authorization: `Bearer ${token}`
       };
   
-      this.http.post(`http://127.0.0.1:80/add/schedule/${this.farmId}`, this.form.getRawValue(), {headers})
+      this.http.post(`https://13.232.10.107:443/add/schedule/${this.farmId}`, this.form.getRawValue(), {headers})
         .subscribe((res: any) => {
           console.log(res);
         });

@@ -55,7 +55,7 @@ export class AddFarmComponent implements OnInit {
 
     // Make the HTTP POST request
     this.http
-      .post(`http://127.0.0.1:80/add/farm/${this.farmerId}`, this.form.getRawValue(), { headers })
+      .post(`https://13.232.10.107:443/add/farm/${this.farmerId}`, this.form.getRawValue(), { headers })
       .subscribe(
         res => {
           console.log('Response:', res);

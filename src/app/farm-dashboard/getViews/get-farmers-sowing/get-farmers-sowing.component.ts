@@ -29,7 +29,7 @@ export class GetFarmersSowingComponent implements OnInit {
     const headers = {
       Authorization: `Bearer ${token}`
     };
-    this.http.get<any[]>("http://127.0.0.1:80/get_view/all_farmer_growing_crop", { headers })
+    this.http.get<any[]>("https://13.232.10.107:443/get_view/all_farmer_growing_crop", { headers })
       .subscribe({
         next: (data) => {
           this.farmers = data.map(farmer => ({ id: farmer[0], name: farmer[1] }));
