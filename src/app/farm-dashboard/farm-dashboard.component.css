@@ -1,49 +1,30 @@
-/* Apply some padding and margin to center the content */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding-top: 30px;
+.dashboard-container {
+    background: linear-gradient(135deg, #4c6ef5, #80b2ff);
+    min-height: 100vh;
+    color: #fff;
   }
   
   .card {
-    transition: all 0.3s ease;
+    background-color: #fff;
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   
   .card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: scale(1.05);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
   }
   
-  .text-center {
-    text-align: center;
+  .card-title {
+    font-weight: bold;
+    font-size: 1.2rem;
   }
   
-  /* For specific button color schemes */
-  .mat-raised-button.primary {
-    background-color: #007bff;
-    color: white;
+  .card-text {
+    font-size: 0.9rem;
   }
   
-  .mat-raised-button.accent {
-    background-color: #28a745;
-    color: white;
-  }
-  
-  .mat-raised-button.warn {
-    background-color: #dc3545;
-    color: white;
-  }
-  
-  /* Add spacing between cards */
-  .row {
-    margin-top: 20px;
-  }
-  
-  .w-100 {
-    width: 100%;
-  }
-  
-  h1, h2 {
-    font-family: 'Arial', sans-serif;
+  .text-primary {
+    color: #4c6ef5 !important;
   }
   

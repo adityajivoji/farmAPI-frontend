@@ -3,6 +3,11 @@ a {
   cursor: pointer;
 }
 
+.content-wrapper {
+  padding-left: 10vw;
+  padding-right: 10vw;
+}
+
 .form-signin {
   max-width: 330px;
   padding: 1rem;

@@ -44,10 +44,10 @@ export class NavComponent {
         // Remove the token from localStorage
         
         
-        this.router.navigate(['/login']); // Redirect to login
+        this.router.navigate(['/']); // Redirect to Home
       },
       (error) => {
-        this.router.navigate(['/login'])
+        this.router.navigate(['/farm-dashboard'])
         console.error('Logout failed', error);
       }
     );

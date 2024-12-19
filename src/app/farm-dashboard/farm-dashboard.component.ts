@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
+import { MatCardModule } from '@angular/material/card';
 import { jwtVerify } from 'jose';
 @Component({
   selector: 'app-farm-dashboard',
-  imports: [RouterModule, CommonModule],
+  imports: [RouterModule, CommonModule, MatCardModule],
   templateUrl: './farm-dashboard.component.html',
   styleUrl: './farm-dashboard.component.css'
 })

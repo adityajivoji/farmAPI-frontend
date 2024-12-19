@@ -45,7 +45,12 @@ export class AddScheduleComponent {
       this.http.post(`http://13.232.10.107:80/add/schedule/${this.farmId}`, this.form.getRawValue(), {headers})
         .subscribe((res: any) => {
           console.log(res);
+          alert('Farm added successfully!!!');
+          this.router.navigate([`/list-farmers`]);
         });
+    }
+    cancel() {
+      this.router.navigate([`/list-farmers`]);
     }
 
 }

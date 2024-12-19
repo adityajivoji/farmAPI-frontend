@@ -19,10 +19,8 @@
             <h5 class="card-title">Farmer: {{ farmer.name }}</h5>
             <p><strong>Phone:</strong> {{ farmer.phone }}</p>
             <p><strong>Language:</strong> {{ farmer.language }}</p>
-  
-            <h6 class="mt-3">Farms</h6>
-            <!-- Loop through the farmer's farms -->
-            <button (click)="goToFarmPage(farmer.id)">View Farms</button>
+              <!-- Loop through the farmer's farms -->
+            <button class="btn btn-primary" (click)="goToFarmPage(farmer.id)">View Farms</button>
           </div>
         </div>
       </div>

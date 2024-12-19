@@ -60,11 +60,16 @@ export class AddFarmComponent implements OnInit {
       .subscribe(
         res => {
           console.log('Response:', res);
-          // Navigate to another page or show a success message if needed
+          alert('Farm added successfully!!!');
+          this.router.navigate([`/farm/${this.farmerId}`]);
         },
         error => {
           console.error('Error occurred:', error);
+          alert('Failed to add farm. Please try again.');
         }
       );
+  }
+  cancel() {
+    this.router.navigate([`/list-farmers`]);
   }
 }

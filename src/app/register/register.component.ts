@@ -40,6 +40,16 @@ export class RegisterComponent implements OnInit {
     this.http.post('http://13.232.10.107:80/register/user', this.form.getRawValue(), {headers})
       .subscribe((res: any) => {
         console.log(res);
-      });
+        alert('User created successfully!');
+        this.router.navigate(['/farm-dashboard']);
+      },
+      (err: any) => {
+        console.error(err);
+        alert('Failed to create user. Please try again.');
+      }
+    );
+  }
+  cancel() {
+    this.router.navigate(['/farm-dashboard']); // Navigate back to the dashboard
   }
 }

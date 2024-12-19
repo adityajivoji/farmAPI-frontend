@@ -30,7 +30,7 @@
                 <h6>Schedules</h6>
                 <ul class="list-group">
                   <li class="list-group-item list-group-item-action" *ngFor="let scheduleId of farm.schedule">
-                    <a [routerLink]="['/schedule', scheduleId]" class="text-decoration-none">
+                    <a [routerLink]="['/schedule', scheduleId]" class="text-decoration-none mb-1">
                       View Schedule {{ scheduleId }}
                     </a>
                   </li>
@@ -39,8 +39,8 @@
               <div *ngIf="farm.schedule.length === 0" class="mt-3 text-muted">
                 No schedules available for this farm.
               </div>
-              <div>
-                <button (click)="addSchedule(farm.id)">Add Schedule</button>
+              <div class="mt-3">
+                <button class="btn btn-primary" (click)="addSchedule(farm.id)">Add Schedule</button>
               </div>
             </div>
           </div>

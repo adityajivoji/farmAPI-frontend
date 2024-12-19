@@ -1,5 +1,5 @@
 <app-secondary-nav></app-secondary-nav>
-
+<div class="content-wrapper">
 <div *ngIf="isLoading" class="loading">Loading schedule data...</div>
 <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
 <div *ngIf="!isLoading && !errorMessage" class="schedule-container">
@@ -8,4 +8,5 @@
     <p>Date: {{ schedule.date }}</p>
     <p>Schedule ID: {{ schedule.scheduleId }}</p>
   </div>
+</div>
 </div>

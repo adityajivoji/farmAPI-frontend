@@ -1,5 +1,5 @@
 <app-secondary-nav></app-secondary-nav>
-
+<div class="content-wrapper">
 <div *ngIf="isLoading" class="loading">Loading farmers...</div>
 <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
 <div *ngIf="!isLoading && !errorMessage" class="farmers-container">
@@ -14,4 +14,5 @@
       <button (click)="addFarm(farmer.id)">Add Farms</button>
     </div>
   </div>
+</div>
 </div>

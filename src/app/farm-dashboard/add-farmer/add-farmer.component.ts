@@ -38,6 +38,16 @@ export class AddFarmerComponent implements OnInit {
     this.http.post('http://13.232.10.107:80/add/farmer', this.form.getRawValue(), { headers })
       .subscribe((res: any) => {
         console.log(res);
-      });
+        alert('Farmer added successfully!!!');
+        this.router.navigate(['/list-farmers']);
+      },
+      (err: any) => {
+        console.error(err);
+        alert('Failed to add farmer. Please try again.');
+      }
+      );
+  }
+  cancel() {
+    this.router.navigate(['/farm-dashboard']); // Navigate back to the dashboard
   }
 }
