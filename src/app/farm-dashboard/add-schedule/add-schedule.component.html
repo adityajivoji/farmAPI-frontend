@@ -1,0 +1,27 @@
+<app-secondary-nav></app-secondary-nav>
+
+<div class="form-signin w-100 m-auto">
+    <form [formGroup] = "form" (submit) = "submit()">
+        <h1 class="h3 mb-3 fw-normal">Add Schedule Details</h1>
+    
+        <div class="form-floating mb-3">
+            <input formControlName="days_after_sowing" type="text" class="form-control" id="floatingdays_after_sowing" placeholder="Days After Sowing">
+            <label for="floatingdays_after_sowing">Day After Sowing</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input formControlName="quantity" type="text" class="form-control" id="floatingInput" placeholder="Quantity">
+            <label for="floatingQuantity">Quantity</label>
+            </div>
+        <div class="form-floating mb-3">
+            <input formControlName="fertilizer" type="text" class="form-control" id="floatingfertilizer" placeholder="Fertilizer">
+            <label for="floatingfertilizer">Fertilizer</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input formControlName="quantity_unit" type="text" class="form-control" id="floatingquantity_unit" placeholder="quantity_unit">
+            <label for="floatingquantity_unit">Quantity Unit</label>
+        </div>
+    
+        <button class="btn btn-primary w-100 py-2" type="submit">Submit</button>
+        <button class="btn btn-danger w-100 py-2 mt-2" type="button" (click)="cancel()">Cancel</button>
+    </form>
+</div>

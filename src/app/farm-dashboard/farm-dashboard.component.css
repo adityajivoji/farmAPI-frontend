@@ -1,0 +1,30 @@
+.dashboard-container {
+    background: linear-gradient(135deg, #4c6ef5, #80b2ff);
+    min-height: 100vh;
+    color: #fff;
+  }
+  
+  .card {
+    background-color: #fff;
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card-title {
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+  
+  .card-text {
+    font-size: 0.9rem;
+  }
+  
+  .text-primary {
+    color: #4c6ef5 !important;
+  }
+  

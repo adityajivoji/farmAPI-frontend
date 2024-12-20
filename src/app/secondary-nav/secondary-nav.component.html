@@ -1,0 +1,25 @@
+<!-- Secondary Navbar for Dashboard navigation -->
+<div class="bg-light p-2 mb-4">
+  <div class="container content-wrapper">
+    <ul class="nav">
+      <li class="nav-item">
+        <a class="nav-link" (click)="navigateToDashboard()">Dashboard</a>
+      </li>
+      <li *ngIf="user_role === 'superadmin' || user_role === 'admin'" class="nav-item">
+        <a class="nav-link" (click)="navigateToRegister()">Create User</a>
+      </li>
+      <li *ngIf="user_role === 'superadmin' || user_role === 'admin'" class="nav-item">
+        <a class="nav-link" (click)="navigateToCreateFarmer()">Create Farmer</a>
+      </li>
+      <li *ngIf="user_role === 'superadmin' || user_role === 'admin' || user_role === 'user'" class="nav-item">
+        <a class="nav-link" (click)="navigateToListFarmers()">List Farmers</a>
+      </li>
+      <li *ngIf="user_role === 'superadmin' || user_role === 'admin' || user_role === 'user'" class="nav-item">
+        <a class="nav-link" (click)="navigateToFarmersSowing()">Get All Farmers Sowing</a>
+      </li>
+      <li *ngIf="user_role === 'superadmin' || user_role === 'admin' || user_role === 'user'" class="nav-item">
+        <a class="nav-link" (click)="navigateToDueTodayTomorrow()">Get Dues for Today/Tomorrow</a>
+      </li>
+    </ul>
+  </div>
+</div>

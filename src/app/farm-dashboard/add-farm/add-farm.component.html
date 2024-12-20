@@ -1,0 +1,27 @@
+<app-secondary-nav></app-secondary-nav>
+
+<div class="form-signin w-100 m-auto">
+    <form [formGroup] = "form" (submit) = "submit()">
+        <h1 class="h3 mb-3 fw-normal">Add Farm Details</h1>
+    
+        <div class="form-floating mb-3">
+            <input formControlName="area" type="text" class="form-control" id="floatingArea" placeholder="area">
+            <label for="floatingArea">Area</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input formControlName="crop_grown" type="text" class="form-control" id="floatingcrop_grown" placeholder="name@example.com">
+            <label for="floatingcrop_grown">Crop Grown</label>
+            </div>
+        <div class="form-floating mb-3">
+            <input formControlName="sowing_date" type="text" class="form-control" id="floatingSowingDate" placeholder="sowing_date">
+            <label for="floatingSowingDate">Sowing Date</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input formControlName="village" type="text" class="form-control" id="floatingVillage" placeholder="roles">
+            <label for="floatingVillage">Village</label>
+        </div>
+    
+        <button class="btn btn-primary w-100 py-2" type="submit">Submit</button>
+        <button class="btn btn-danger w-100 py-2 mt-2" type="button" (click)="cancel()">Cancel</button>
+    </form>
+</div>

@@ -1,0 +1,18 @@
+<app-secondary-nav></app-secondary-nav>
+<div class="content-wrapper">
+<div *ngIf="isLoading" class="loading">Loading farmers...</div>
+<div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+<div *ngIf="!isLoading && !errorMessage" class="farmers-container">
+  <div *ngFor="let farmer of farmers" class="farmer-card">
+    <h3>{{ farmer.name }}</h3>
+    <p>Phone: {{ farmer.phone }}</p>
+    <p>Language: {{ farmer.language }}</p>
+    <div>
+      <button (click)="goToFarmPage(farmer.id)">View Farms</button>
+    </div>
+    <div>
+      <button (click)="addFarm(farmer.id)">Add Farms</button>
+    </div>
+  </div>
+</div>
+</div>

@@ -1,0 +1,78 @@
+<div class="dashboard-container">
+  <div class="content-wrapper container py-5">
+    <h1 class="text-center text-light mb-4">Welcome to the Dashboard</h1>
+
+    <!-- Super Admin and Admin User Role Section -->
+      <div class="row g-4">
+        <!-- Create User Card -->
+        <div class="col-md-4" *ngIf="user_role === 'superadmin' || user_role === 'admin'">
+          <a mat-card class="card-link" (click)="getRegisterPage()">
+          <div class="card shadow-lg border-0">
+            <div class="card-body text-center">
+              <h5 class="card-title text-primary">Create User</h5>
+              <p class="card-text text-muted">
+                Add new users to manage the system efficiently.
+              </p>
+            </div>
+          </div>
+          </a>
+        </div>
+
+        <!-- Create Farmer Card -->
+        <div class="col-md-4">
+          <a mat-card class="card-link" (click)="createFarmer()">
+          <div class="card shadow-lg border-0">
+            <div class="card-body text-center">
+              <h5 class="card-title text-primary">Create Farmer</h5>
+              <p class="card-text text-muted">
+                Register new farmers and manage their details.
+              </p>
+            </div>
+          </div>
+        </a>
+        </div>
+
+        <!-- List Farmers Card -->
+        <div class="col-md-4">
+          <a mat-card class="card-link" (click)="listFarmers()">
+          <div class="card shadow-lg border-0">
+            <div class="card-body text-center">
+              <h5 class="card-title text-primary">List Farmers</h5>
+              <p class="card-text text-muted">
+                View and manage the complete list of farmers.
+              </p>
+            </div>
+          </div>
+          </a>
+        </div>
+
+        <!-- Farmers Sowing Card -->
+        <div class="col-md-4">
+          <a mat-card class="card-link" (click)="getFarmersSowing()">
+          <div class="card shadow-lg border-0">
+            <div class="card-body text-center">
+              <h5 class="card-title text-primary">Farmers Sowing</h5>
+              <p class="card-text text-muted">
+                Track the sowing activities of farmers.
+              </p>
+            </div>
+          </div>
+        </a>
+        </div>
+
+        <!-- Dues Card -->
+        <div class="col-md-4">
+          <a mat-card class="card-link" (click)="getDueTodayTomorrow()">
+          <div class="card shadow-lg border-0">
+            <div class="card-body text-center">
+              <h5 class="card-title text-primary">Dues Today/Tomorrow</h5>
+              <p class="card-text text-muted">
+                Keep track of dues for today and tomorrow.
+              </p>
+            </div>
+          </div>
+        </a>
+        </div>
+      </div>
+  </div>
+</div>

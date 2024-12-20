@@ -1,0 +1,26 @@
+<app-secondary-nav></app-secondary-nav>
+
+<div class="form-signin w-100 m-auto">
+    <form [formGroup]='form' (submit)="submit()">
+      <h1 class="h3 mb-3 fw-normal">Add Farmer Details</h1>
+  
+      <div class="form-floating mb-3">
+        <input formControlName="name" type="text" class="form-control" id="farmer_name" placeholder="Farmer Name">
+        <label for="farmer_name">Farmer Name</label>
+      </div>
+  
+      <div class="form-floating mb-3">
+        <input formControlName="phone" type="text" class="form-control" id="farmer_phone" placeholder="Phone">
+        <label for="farmer_phone">Phone</label>
+      </div>
+  
+      <div class="form-floating mb-3">
+        <input formControlName="language" type="text" class="form-control" id="farmer_language" placeholder="Language">
+        <label for="farmer_language">Language</label>
+      </div>
+  
+      <button class="btn btn-primary w-100 py-2" type="submit">Submit</button>
+      <button class="btn btn-danger w-100 py-2 mt-2" type="button" (click)="cancel()">Cancel</button>
+    </form>
+  </div>
+  

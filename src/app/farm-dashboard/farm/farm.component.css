@@ -1,0 +1,42 @@
+.loading {
+    font-size: 18px;
+    color: #666;
+  }
+  
+  .error {
+    color: red;
+    font-size: 16px;
+  }
+  
+  .farmers-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 10px;
+  }
+  
+  .farmer-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 15px;
+    width: 250px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .farmer-card button {
+    margin-top: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .farmer-card button:hover {
+    background-color: #0056b3;
+  }
+  
