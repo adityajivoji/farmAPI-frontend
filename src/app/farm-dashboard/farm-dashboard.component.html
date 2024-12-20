@@ -19,7 +19,7 @@
         </div>
 
         <!-- Create Farmer Card -->
-        <div class="col-md-4">
+        <div class="col-md-4" *ngIf="user_role === 'superadmin' || user_role === 'admin'">
           <a mat-card class="card-link" (click)="createFarmer()">
           <div class="card shadow-lg border-0">
             <div class="card-body text-center">

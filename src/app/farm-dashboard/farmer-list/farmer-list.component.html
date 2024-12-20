@@ -10,7 +10,7 @@
     <div>
       <button (click)="goToFarmPage(farmer.id)">View Farms</button>
     </div>
-    <div>
+    <div *ngIf="user_role === 'superadmin' || user_role === 'admin'">
       <button (click)="addFarm(farmer.id)">Add Farms</button>
     </div>
   </div>

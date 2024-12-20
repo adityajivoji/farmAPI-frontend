@@ -1,56 +1,75 @@
 <app-secondary-nav></app-secondary-nav>
 
-<div class="container mt-4">
-    <!-- Loading Indicator -->
-    <div *ngIf="isLoading" class="alert alert-info text-center" role="alert">
-      Loading data...
+<div class="container mt-5">
+  <!-- Loading Indicator -->
+  <div *ngIf="isLoading" class="alert alert-info text-center" role="alert">
+    <div class="spinner-border text-primary me-2" role="status">
+      <span class="visually-hidden">Loading...</span>
     </div>
-  
-    <!-- Error Message -->
-    <div *ngIf="errorMessage" class="alert alert-danger text-center" role="alert">
-      {{ errorMessage }}
-    </div>
-  
-    <!-- Farms List -->
-    <div *ngIf="!isLoading && !errorMessage && farms.length > 0">
-      <h2 class="mb-4">Farms List</h2>
-      <div class="row g-4">
-        <div class="col-md-6 col-lg-4" *ngFor="let farm of farms">
-          <div class="card h-100 shadow-sm">
-            <div class="card-body">
-              <h5 class="card-title">Farm ID: {{ farm.id }}</h5>
-              <ul class="list-unstyled">
-                <li><strong>Area:</strong> {{ farm.area }}</li>
-                <li><strong>Crop Grown:</strong> {{ farm.cropGrown }}</li>
-                <li><strong>Sowing Date:</strong> {{ farm.sowingDate }}</li>
-                <li><strong>Village:</strong> {{ farm.village }}</li>
+    Loading data...
+  </div>
+
+  <!-- Error Message -->
+  <div *ngIf="errorMessage" class="alert alert-danger text-center" role="alert">
+    <i class="bi bi-exclamation-triangle-fill me-2"></i>{{ errorMessage }}
+  </div>
+
+  <!-- Farms List -->
+  <div *ngIf="!isLoading && !errorMessage && farms.length > 0">
+    <h2 class="mb-4 text-center">Farms List</h2>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4" *ngFor="let farm of farms">
+        <div class="card h-100 shadow border-0">
+          <div class="card-header bg-primary text-white text-center">
+            <h5 class="card-title mb-0">Farm ID: {{ farm.id }}</h5>
+          </div>
+          <div class="card-body d-flex flex-column justify-content-between">
+            <div>
+              <ul class="list-group mb-3">
+                <li class="list-group-item d-flex justify-content-between">
+                  <span><strong>Area:</strong></span>
+                  <span>{{ farm.area }}</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between">
+                  <span><strong>Crop Grown:</strong></span>
+                  <span>{{ farm.cropGrown }}</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between">
+                  <span><strong>Sowing Date:</strong></span>
+                  <span>{{ farm.sowingDate }}</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between">
+                  <span><strong>Village:</strong></span>
+                  <span>{{ farm.village }}</span>
+                </li>
               </ul>
               <!-- Schedule Links -->
-              <div *ngIf="farm.schedule.length > 0" class="mt-3">
-                <h6>Schedules</h6>
+              <div *ngIf="farm.schedule.length > 0">
+                <h6 class="text-primary">Schedules</h6>
                 <ul class="list-group">
-                  <li class="list-group-item list-group-item-action" *ngFor="let scheduleId of farm.schedule">
-                    <a [routerLink]="['/schedule', scheduleId]" class="text-decoration-none mb-1">
-                      View Schedule {{ scheduleId }}
-                    </a>
+                  <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" *ngFor="let scheduleId of farm.schedule">
+                    <a [routerLink]="['/schedule', scheduleId]" class="text-decoration-none">View Schedule {{ scheduleId }}</a>
+                    <i class="bi bi-arrow-right-circle"></i>
                   </li>
                 </ul>
               </div>
-              <div *ngIf="farm.schedule.length === 0" class="mt-3 text-muted">
+              <div *ngIf="farm.schedule.length === 0" class="mt-3 text-muted fst-italic text-center">
                 No schedules available for this farm.
               </div>
-              <div class="mt-3">
-                <button class="btn btn-primary" (click)="addSchedule(farm.id)">Add Schedule</button>
-              </div>
+            </div>
+            <div class="mt-3 text-end">
+              <button class="btn btn-primary btn-sm" (click)="addSchedule(farm.id)" *ngIf="user_role === 'superadmin' || user_role === 'admin'">
+                <i class="bi bi-plus-circle me-1"></i>Add Schedule
+              </button>
             </div>
           </div>
         </div>
       </div>
     </div>
-  
-    <!-- No Farms Available -->
-    <div *ngIf="!isLoading && !errorMessage && farms.length === 0" class="alert alert-warning text-center mt-4" role="alert">
-      No farms available to display.
-    </div>
   </div>
-  
+
+  <!-- No Farms Available -->
+  <div *ngIf="!isLoading && !errorMessage && farms.length === 0" class="alert alert-warning text-center mt-5" role="alert">
+    <i class="bi bi-info-circle me-2"></i>No farms available to display.
+  </div>
+</div>
